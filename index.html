@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dasom Lee, Ph.D. — Science & Technology Policy</title>
+<meta name="description" content="Dasom Lee is an Associate Professor in the Graduate School of Science and Technology Policy at KAIST. Her research focuses on responsible innovation, energy transition, and the governance of energy and transportation technologies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3EEE4;
+    --paper-2:#ECE5D7;
+    --ink:#1C2620;
+    --ink-soft:#56615A;
+    --pine:#1F4536;
+    --pine-deep:#163328;
+    --ember:#A8612C;
+    --line:#D9D0BF;
+    --display:'Fraunces',Georgia,serif;
+    --body:'Newsreader',Georgia,serif;
+    --ui:'Hanken Grotesk',-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:19px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* subtle grain */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--pine);color:var(--paper)}
+  a{color:inherit}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 40px}
+  .eyebrow{
+    font-family:var(--ui);font-size:12.5px;font-weight:600;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--ember);
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(243,238,228,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{font-family:var(--display);font-weight:500;font-size:21px;letter-spacing:-.01em;text-decoration:none}
+  .brand span{color:var(--ember)}
+  nav ul{display:flex;gap:34px;list-style:none}
+  nav a{
+    font-family:var(--ui);font-size:14px;font-weight:500;letter-spacing:.02em;
+    text-decoration:none;color:var(--ink-soft);position:relative;padding:4px 0;transition:color .25s;
+  }
+  nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--pine);transition:width .3s ease}
+  nav a:hover{color:var(--ink)}
+  nav a:hover::after{width:100%}
+  .nav-toggle{display:none;background:none;border:none;font-family:var(--ui);font-size:14px;color:var(--ink);cursor:pointer}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:96px 0 84px;position:relative;z-index:2}
+  .hero-grid{display:grid;grid-template-columns:1.5fr .85fr;gap:64px;align-items:center}
+  .hero h1{
+    font-family:var(--display);font-weight:500;font-size:clamp(48px,7vw,82px);
+    line-height:.98;letter-spacing:-.025em;margin:18px 0 0;
+  }
+  .hero h1 em{font-style:italic;color:var(--pine)}
+  .role{
+    font-family:var(--ui);font-size:17px;font-weight:500;color:var(--ink);
+    margin-top:26px;line-height:1.5;
+  }
+  .role .muted{color:var(--ink-soft);font-weight:400}
+  .lede{font-size:20px;color:var(--ink-soft);margin-top:22px;max-width:34ch}
+  .hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+  .btn{
+    font-family:var(--ui);font-size:14px;font-weight:600;letter-spacing:.02em;
+    text-decoration:none;padding:13px 26px;border-radius:2px;transition:all .25s;display:inline-block;
+  }
+  .btn-solid{background:var(--pine);color:var(--paper)}
+  .btn-solid:hover{background:var(--pine-deep);transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+
+  .portrait{position:relative}
+  .portrait-frame{
+    aspect-ratio:165/210;border-radius:3px;overflow:hidden;position:relative;
+    background:linear-gradient(150deg,var(--pine),var(--pine-deep));
+    box-shadow:18px 22px 0 -4px var(--paper-2),18px 22px 0 -3px var(--line);
+  }
+  .portrait-frame img{width:100%;height:100%;object-fit:cover;display:block}
+  /* monogram placeholder shown until a photo is added */
+  .monogram{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:var(--paper);text-align:center;gap:10px;
+  }
+  .monogram .mark{font-family:var(--display);font-size:74px;font-weight:400;line-height:1;opacity:.92}
+  .monogram .note{font-family:var(--ui);font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.6}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{position:relative;z-index:2}
+  .band{border-top:1px solid var(--line);padding:90px 0}
+  .sec-head{margin-bottom:54px;max-width:60ch}
+  .sec-head h2{
+    font-family:var(--display);font-weight:500;font-size:clamp(32px,4.4vw,46px);
+    letter-spacing:-.02em;line-height:1.05;margin-top:14px;
+  }
+
+  /* ---------- RESEARCH AREAS ---------- */
+  .areas{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);
+    border:1px solid var(--line);border-radius:3px;overflow:hidden}
+  .area{background:var(--paper);padding:38px 32px;transition:background .3s}
+  .area:hover{background:var(--paper-2)}
+  .area .num{font-family:var(--display);font-size:34px;color:var(--ember);line-height:1}
+  .area h3{font-family:var(--display);font-weight:500;font-size:23px;letter-spacing:-.01em;margin:18px 0 10px;line-height:1.15}
+  .area p{font-size:17px;color:var(--ink-soft);line-height:1.55}
+
+  /* ---------- PROJECTS ---------- */
+  .project{
+    display:grid;grid-template-columns:64px 1fr;gap:30px;
+    padding:42px 0;border-top:1px solid var(--line);
+  }
+  .project:first-of-type{border-top:none;padding-top:0}
+  .project .idx{font-family:var(--display);font-size:22px;color:var(--ember);padding-top:6px}
+  .project .tag{font-family:var(--ui);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--pine)}
+  .project h3{
+    font-family:var(--display);font-weight:500;font-size:clamp(24px,3vw,31px);
+    line-height:1.12;letter-spacing:-.015em;margin:12px 0 16px;
+  }
+  .abstract{color:var(--ink-soft);max-width:68ch;font-size:18px;
+    max-height:5.6em;overflow:hidden;position:relative;transition:max-height .5s ease;}
+  .abstract.open{max-height:1400px}
+  .abstract:not(.open)::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:2.4em;
+    background:linear-gradient(transparent,var(--paper));
+  }
+  .toggle{
+    background:none;border:none;cursor:pointer;margin-top:14px;
+    font-family:var(--ui);font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--pine);
+    display:inline-flex;align-items:center;gap:7px;padding:0;
+  }
+  .toggle .chev{transition:transform .3s}
+  .toggle.open .chev{transform:rotate(180deg)}
+
+  /* ---------- CV CALLOUT ---------- */
+  .cv-band{background:var(--pine);color:var(--paper);border:none;border-radius:4px;
+    padding:56px 56px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+  .cv-band .eyebrow{color:#D9B98F}
+  .cv-band h2{font-family:var(--display);font-weight:500;font-size:34px;letter-spacing:-.02em;margin-top:10px;max-width:24ch;line-height:1.1}
+  .cv-band .btn-solid{background:var(--paper);color:var(--pine-deep)}
+  .cv-band .btn-solid:hover{background:#fff;transform:translateY(-2px)}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .contact-grid .label{font-family:var(--ui);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ember);margin-bottom:12px}
+  .contact-grid p{font-size:19px;line-height:1.55}
+  .contact-grid a.mail{color:var(--pine);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .25s}
+  .contact-grid a.mail:hover{border-color:var(--pine)}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:46px 0;position:relative;z-index:2}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+    font-family:var(--ui);font-size:13.5px;color:var(--ink-soft)}
+  .foot-inner a{color:var(--pine);text-decoration:none;font-weight:500}
+  .foot-inner a:hover{text-decoration:underline}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  .hero .reveal{transition-delay:var(--d,0s)}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    body{font-size:18px}
+    .wrap{padding:0 24px}
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .portrait{max-width:280px}
+    .areas{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr;gap:34px}
+    nav ul{display:none}
+    nav.open ul{
+      display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;
+      background:var(--paper);border-bottom:1px solid var(--line);padding:20px 24px;gap:18px;
+    }
+    .nav-toggle{display:block}
+    .cv-band{padding:40px 32px}
+    .project{grid-template-columns:1fr;gap:8px}
+    .project .idx{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">Dasom Lee<span>.</span></a>
+    <nav id="nav">
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">Menu</button>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow reveal" style="--d:0s">Associate Professor · KAIST</p>
+        <h1 class="reveal" style="--d:.08s">Dasom Lee,<br><em>Ph.D.</em></h1>
+        <p class="role reveal" style="--d:.16s">
+          Graduate School of Science and Technology Policy<br>
+          <span class="muted">Korea Advanced Institute of Science and Technology (KAIST)</span>
+        </p>
+        <p class="lede reveal" style="--d:.24s">
+          Researching responsible innovation, energy transition, and the
+          governance of emerging energy and transportation technologies.
+        </p>
+        <div class="hero-cta reveal" style="--d:.32s">
+          <a href="#research" class="btn btn-solid">View research</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+      </div>
+      <div class="portrait reveal" style="--d:.2s">
+        <div class="portrait-frame">
+          <!-- To use your own photo, replace the monogram block below with:
+               <img src="your-photo.jpg" alt="Dasom Lee"> -->
+          <div class="monogram">
+            <span class="mark">DL</span>
+            <span class="note">Add portrait here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / RESEARCH AREAS -->
+  <section class="band" id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Research agenda</p>
+        <h2>Three threads running through my work.</h2>
+      </div>
+      <div class="areas reveal">
+        <div class="area">
+          <div class="num">01</div>
+          <h3>Responsible Innovation</h3>
+          <p>Embedding societal values and anticipatory governance into the design and deployment of new technologies.</p>
+        </div>
+        <div class="area">
+          <div class="num">02</div>
+          <h3>Energy &amp; Environmental Policy</h3>
+          <p>The politics of energy transition, public attitudes toward clean energy, and just, sustainable futures.</p>
+        </div>
+        <div class="area">
+          <div class="num">03</div>
+          <h3>Technology Governance</h3>
+          <p>Societal and regulatory challenges raised by energy and transportation technologies, from AVs to data centers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="band" id="research">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Selected projects</p>
+        <h2>Recent &amp; ongoing research.</h2>
+        <p style="color:var(--ink-soft);margin-top:16px;font-size:18px;">
+          The abstracts below highlight current work. A full list of published works appears in my
+          <a href="#cv" style="color:var(--pine)">curriculum vitae</a>.
+        </p>
+      </div>
+
+      <article class="project reveal">
+        <div class="idx">01</div>
+        <div>
+          <span class="tag">Energy · Public Opinion</span>
+          <h3>The Right Kind of Energy: Conservative Support for Clean Energy in South Korea</h3>
+          <div class="abstract">With the rise of conservatism in many parts of the world, political polarization has become more divisive. Considering the urgency of climate change, cross-ideological cooperation on energy policy is needed, and clean energy conservatism may provide a strategic entry point to further promote a support base for energy transition policies. Drawing on nationally representative survey data, the study finds that conservative respondents show significantly stronger support for nuclear energy and weaker support for renewables. Although both economic and environmental considerations influence energy preferences, the weight placed on these factors varies across the ideological spectrum. These findings echo trends observed in North America and Europe, where conservatives tend to prioritize economic and energy security concerns over environmental ones. However, the Korean context presents more nuanced patterns that resist simple ideological classification. In particular, the relationships between ideology, economic and environmental reasoning, and energy preferences are more complex than a straightforward opposition between conservative and progressive values. These results contribute to the growing literature on clean energy conservatism by showing how global patterns may manifest differently in non-Western settings.</div>
+          <button class="toggle">Read abstract <span class="chev">▾</span></button>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="idx">02</div>
+        <div>
+          <span class="tag">Automated Vehicles · Privacy</span>
+          <h3>Privacy Challenges of Automated Vehicles: Merging Contextual Integrity and Responsible Innovation</h3>
+          <div class="abstract">Privacy has become a central issue in automated vehicles (AVs). Questions around who owns the data, who manages the data, and how to access data are some of the key concerns around AVs and mobility data justice. This study broadens the understanding of privacy challenges for AVs by introducing a multilevel contextual integrity (MCI) model. MCI considers contextual integrity (CI) in tandem with societal preferences and individual-level preferences, which are captured using demographic data. Therefore, it captures the individual-level, group-level, and societal-level factors driving people's preferences regarding AV privacy. Empirical insights into the relationships among the social forces captured at these three levels are drawn from survey data collected in South Korea. The findings reveal that although social goals and demographic variables initially show some association, the introduction of CI parameters significantly diminishes this relationship, highlighting the primacy of informational contexts in shaping AV privacy attitudes. This paper nuances current understandings of AV privacy by linking informational norms with overarching societal values and goals. By advancing the CI framework to include social goals, this study contributes to the broader discourse on responsible innovation, offering a robust approach to managing privacy challenges in emerging technologies.</div>
+          <button class="toggle">Read abstract <span class="chev">▾</span></button>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="idx">03</div>
+        <div>
+          <span class="tag">Data Centers · Regulation</span>
+          <h3>Data Centers' Environmental Challenges: A Comparative Review and Policy Harmonization</h3>
+          <div class="abstract">With the exponential expansion of data centers, there is an increasing need for regulations on their impact on climate change and the environment. In this paper, a comparative systematic review of data center regulations across the United States, Canada, Germany, the Netherlands, and the United Kingdom was conducted. It analyzes the existing regulations on data centers' environmental challenges and, in doing so, identifies the gaps in current regulatory frameworks. This paper is largely divided into four sections: environmental, energy, water, and other (i.e., biodiversity, waste, and pollution). The analysis reveals that there are energy and water challenges related to data centers that need to be further regulated. Moreover, other environmental challenges are often missing from the existing regulations, which need to be rectified. Although there have been efforts to mitigate these challenges, there is a lack of a comprehensive set of policies employed coherently across different geographical regions. The study concludes with recommendations for future policy development based on existing policies.</div>
+          <button class="toggle">Read abstract <span class="chev">▾</span></button>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="idx">04</div>
+        <div>
+          <span class="tag">Energy Justice · Indigenous Communities</span>
+          <h3>Indigenous Peoples' Energy Futures: Impacts, Contestations, and New Sites of Collective Action</h3>
+          <div class="abstract">Although renewable energy (RE) transitions offer pathways to sustainability, their implementation often exacerbates existing injustices, particularly for indigenous communities. Emerging research highlights issues such as land encroachment, biodiversity loss, and procedural exclusion, raising concerns about the social and environmental costs of these transitions. This paper examines indigenous peoples' complex and evolving relationship with RE transitions through a systematic review of 87 peer-reviewed articles. It identifies three key thematic areas: (1) the impacts of RE transitions on indigenous communities, including environmental degradation, displacement, and social disruption; (2) indigenous contestations against harmful RE practices, where communities have mobilized politically and legally to resist exploitative projects; and (3) indigenous community energy as a new site of collective action, where indigenous peoples are asserting sovereignty, fostering energy independence, and shaping sustainable energy models on their own terms. The findings challenge the narrative of indigenous communities as passive recipients of RE transitions, revealing them instead as active agents of change who navigate the tension between environmental sustainability and social justice. The study underscores the need to recognize indigenous rights, ensure meaningful participation in decision-making, and support indigenous-led innovations in energy governance. It concludes with a research agenda focused on addressing systemic inequities, strengthening indigenous agency, and advancing just and sustainable energy transitions.</div>
+          <button class="toggle">Read abstract <span class="chev">▾</span></button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section class="band" id="cv">
+    <div class="wrap">
+      <div class="cv-band reveal">
+        <div>
+          <p class="eyebrow">Curriculum Vitae</p>
+          <h2>Full record of publications, teaching &amp; service.</h2>
+        </div>
+        <a class="btn btn-solid" href="https://www.dasomlee.com/_files/ugd/a03eb3_e8bca333378943bda4cd5cf0e3223cf8.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="band" id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Let's connect</p>
+        <h2>Get in touch.</h2>
+      </div>
+      <div class="contact-grid reveal">
+        <div>
+          <p class="label">Email</p>
+          <p><a class="mail" href="mailto:dasom.lee@kaist.ac.kr">dasom.lee@kaist.ac.kr</a></p>
+          <p class="label" style="margin-top:34px;">Lab</p>
+          <p><a class="mail" href="https://aicpspolicy.kaist.ac.kr/" target="_blank" rel="noopener">AI-CPS Policy Lab, KAIST</a></p>
+        </div>
+        <div>
+          <p class="label">Office</p>
+          <p>N4 1221, 291 Daehak-ro<br>Yuseong District<br>Daejeon 34141, Republic of Korea</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>© 2025 Dasom Lee. All rights reserved.</span>
+    <span>Graduate School of Science and Technology Policy · <a href="https://aicpspolicy.kaist.ac.kr/" target="_blank" rel="noopener">KAIST</a></span>
+  </div>
+</footer>
+
+<script>
+  // mobile nav
+  const nav = document.getElementById('nav');
+  document.getElementById('navToggle').addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+  // abstract toggles
+  document.querySelectorAll('.toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const ab = btn.previousElementSibling;
+      const open = ab.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.firstChild.textContent = open ? 'Hide abstract ' : 'Read abstract ';
+    });
+  });
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // hero reveals immediately
+  document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('in'));
+</script>
+</body>
+</html>
