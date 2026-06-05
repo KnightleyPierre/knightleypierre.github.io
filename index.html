@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dasom Lee — Science & Technology Policy</title>
+<title>Dasom Lee — Energy &amp; Climate Tech Politics</title>
 <meta name="description" content="Dasom Lee is an Associate Professor in the Graduate School of Science and Technology Policy at KAIST. Her research uses quantitative and computational methods to study the politics, justice, and governance of contested energy and climate technologies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,8 @@
     --ink-soft:#566158;
     --pine:#264A37;
     --pine-deep:#1A3527;
+    --btn:#3A6850;
+    --btn-deep:#2F543E;
     --ember:#BD5F37;
     --line:#D4DBCC;
     --display:'Source Serif 4',Georgia,serif;
@@ -83,16 +85,16 @@
     margin-top:26px;line-height:1.5;
   }
   .role .muted{color:var(--ink-soft);font-weight:400}
-  .lede{font-size:20px;color:var(--ink-soft);margin-top:22px;max-width:34ch}
+  .lede{font-family:var(--body);font-style:italic;font-size:21px;line-height:1.5;color:var(--ink-soft);margin-top:24px;max-width:46ch}
   .hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
   .btn{
     font-family:var(--ui);font-size:14px;font-weight:600;letter-spacing:.02em;
     text-decoration:none;padding:13px 26px;border-radius:2px;transition:all .25s;display:inline-block;
   }
-  .btn-solid{background:var(--pine);color:var(--paper)}
-  .btn-solid:hover{background:var(--pine-deep);transform:translateY(-2px)}
-  .btn-ghost{border:1px solid var(--ink);color:var(--ink)}
-  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+  .btn-solid{background:var(--btn);color:var(--paper)}
+  .btn-solid:hover{background:var(--btn-deep);transform:translateY(-2px)}
+  .btn-ghost{background:var(--btn);color:var(--paper);border:1.5px solid var(--btn)}
+  .btn-ghost:hover{background:var(--btn-deep);border-color:var(--btn-deep);color:var(--paper)}
 
   .portrait{position:relative;max-width:260px;width:100%;margin-left:auto}
   .portrait-frame{
@@ -267,18 +269,17 @@
       <div class="hero-copy">
         <p class="eyebrow reveal" style="--d:0s">Associate Professor · KAIST</p>
         <h1 class="reveal" style="--d:.08s"><span class="name">Dasom Lee</span></h1>
-        <p class="role reveal" style="--d:.16s">
+        <p class="lede reveal" style="--d:.16s">
+          How do publics and institutions respond to contested energy and climate technologies, and what hidden structure emerges when you disaggregate the categories the field treats as settled?
+        </p>
+        <p class="role reveal" style="--d:.24s">
           Graduate School of Science and Technology Policy<br>
           <span class="muted">Korea Advanced Institute of Science and Technology (KAIST)</span>
         </p>
-        <p class="lede reveal" style="--d:.24s">
-          Studying how societies contest emerging energy and climate technologies &mdash;
-          using quantitative methods to reveal the structure underneath.
-        </p>
         <div class="hero-cta reveal" style="--d:.32s">
           <a href="#research" class="btn btn-solid">View research</a>
-          <a href="Dasom_Lee_CV.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download CV</a>
-          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+          <a href="https://scholar.google.com/citations?user=TuhZD_IAAAAJ&amp;hl=en" target="_blank" rel="noopener" class="btn btn-solid">Google Scholar</a>
+          <a href="#contact" class="btn btn-solid">Get in touch</a>
         </div>
       </div>
       <div class="portrait reveal" style="--d:.2s">
