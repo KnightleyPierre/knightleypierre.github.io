@@ -90,9 +90,9 @@
   .btn-ghost{border:1px solid var(--ink);color:var(--ink)}
   .btn-ghost:hover{background:var(--ink);color:var(--paper)}
 
-  .portrait{position:relative}
+  .portrait{position:relative;max-width:260px;width:100%;margin-left:auto}
   .portrait-frame{
-    aspect-ratio:165/210;border-radius:3px;overflow:hidden;position:relative;
+    aspect-ratio:600/1029;border-radius:3px;overflow:hidden;position:relative;
     background:linear-gradient(150deg,var(--pine),var(--pine-deep));
     box-shadow:18px 22px 0 -4px var(--paper-2),18px 22px 0 -3px var(--line);
   }
@@ -194,6 +194,29 @@
   .reveal.in{opacity:1;transform:none}
   .hero .reveal{transition-delay:var(--d,0s)}
 
+  /* ---------- BOOK ---------- */
+  .book-card{
+    display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:center;
+    background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:46px 48px;
+  }
+  .book-cover{
+    aspect-ratio:2/3;border-radius:3px;position:relative;overflow:hidden;
+    background:linear-gradient(155deg,var(--pine),var(--pine-deep));
+    box-shadow:14px 16px 0 -3px var(--paper),14px 16px 0 -2px var(--line);
+    display:flex;flex-direction:column;justify-content:flex-end;padding:22px 20px;color:var(--paper);
+  }
+  .book-cover::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:rgba(0,0,0,.18);
+  }
+  .book-cover .bc-kicker{font-family:var(--ui);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.7;margin-bottom:auto}
+  .book-cover .bc-title{font-family:var(--display);font-size:23px;line-height:1.05;font-weight:600;letter-spacing:-.01em}
+  .book-cover .bc-sub{font-family:var(--body);font-size:12px;font-style:italic;opacity:.85;margin-top:8px}
+  .book-cover .bc-auth{font-family:var(--ui);font-size:10px;letter-spacing:.06em;opacity:.75;margin-top:16px}
+  .book-body h2{font-family:var(--display);font-weight:500;font-size:clamp(28px,3.6vw,38px);letter-spacing:-.02em;line-height:1.08;margin:12px 0 0}
+  .book-body .book-meta{font-family:var(--ui);font-size:13px;color:var(--ink-soft);margin-top:14px;letter-spacing:.01em}
+  .book-body p.blurb{color:var(--ink-soft);font-size:18px;margin-top:18px;max-width:60ch}
+  .book-body .hero-cta{margin-top:26px}
+
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:860px){
     body{font-size:18px}
@@ -213,6 +236,8 @@
     .project .idx{display:none}
     .grant{grid-template-columns:1fr;gap:6px}
     .grant-year{font-size:21px;padding-top:0}
+    .book-card{grid-template-columns:1fr;gap:30px;padding:34px 28px}
+    .book-cover{max-width:170px}
   }
 </style>
 </head>
@@ -225,6 +250,7 @@
       <button class="nav-toggle" id="navToggle" aria-label="Menu">Menu</button>
       <ul>
         <li><a href="#about">About</a></li>
+        <li><a href="#book">Book</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#cv">CV</a></li>
@@ -272,18 +298,44 @@
       <div class="areas reveal">
         <div class="area">
           <div class="num">01</div>
-          <h3>Politics &amp; Public Attitudes</h3>
-          <p>How political ideology, beliefs, and identity shape public responses to contested energy and climate technologies.</p>
+          <h3>The Politics of Energy &amp; Climate Technology</h3>
+          <p>How ideology, belief, identity, and power shape the ways publics and institutions support, resist, and make sense of emerging energy and climate technologies.</p>
         </div>
         <div class="area">
           <div class="num">02</div>
-          <h3>Environmental Justice</h3>
-          <p>Who bears the burdens of the energy transition &mdash; and how spatial scale reveals inequities that aggregate measures hide.</p>
+          <h3>Justice &amp; the Energy Transition</h3>
+          <p>Who benefits and who bears the burdens as energy systems change &mdash; across communities, technologies, and the spatial scales at which inequity becomes visible.</p>
         </div>
         <div class="area">
           <div class="num">03</div>
-          <h3>Governance &amp; Imaginaries</h3>
-          <p>How states regulate and imagine emerging technologies, from data centers to climate intervention.</p>
+          <h3>Governance &amp; Sociotechnical Imaginaries</h3>
+          <p>How states and societies regulate, imagine, and contest new technologies &mdash; from data centers and AI infrastructure to climate intervention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK -->
+  <section class="band" id="book">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">New book &middot; 2026</p>
+        <h2>Read my book.</h2>
+      </div>
+      <div class="book-card reveal">
+        <div class="book-cover" aria-hidden="true">
+          <span class="bc-kicker">Lecture Notes in Energy &middot; Vol. 46</span>
+          <span class="bc-title">Energy Data</span>
+          <span class="bc-sub">Imagining Future Energy Systems</span>
+          <span class="bc-auth">Nguyen Long &middot; Lee</span>
+        </div>
+        <div class="book-body">
+          <h2 style="font-size:clamp(26px,3.4vw,36px);">Energy Data: Imagining Future Energy Systems</h2>
+          <p class="book-meta">With Le Anh Nguyen Long &middot; Springer, Lecture Notes in Energy (Vol. 46) &middot; April 2026</p>
+          <p class="blurb">A study of how energy data &mdash; from the smart meters that produce it to the systems that share, store, and govern it &mdash; reshapes the environment, social equity, and the energy transition, and how we might re-imagine its ethics and governance responsibly.</p>
+          <div class="hero-cta">
+            <a href="https://link.springer.com/book/10.1007/978-3-032-19171-7" target="_blank" rel="noopener" class="btn btn-solid">Read the book</a>
+          </div>
         </div>
       </div>
     </div>
@@ -323,6 +375,16 @@
 
       <article class="project reveal">
         <div class="idx">03</div>
+        <div>
+          <span class="tag">Energy Justice &middot; Spatial Analysis</span>
+          <h3>A More Granular Geospatial Assessment of Renewable Energy Transition Injustices in the United States</h3>
+          <div class="abstract">The low-carbon energy transition is changing where large infrastructure gets built, and with it whether utility-scale solar and wind fall on the same communities that bore the burden of fossil-fuel and industrial siting. Using U.S. utility-scale solar and wind sites and demographic data spatially disaggregated by race and ethnicity, we find that who bears energy burdens depends on both the technology and the scale at which it is measured. At the county scale, solar concentrates in dense, racially diverse, lower-education counties, while wind follows the wind resource and looks demographically neutral. That changes at more granular spatial scales: tracts nearest wind turbines have higher Black and Hispanic shares, and the gap shrinks with distance. Composite &ldquo;minority&rdquo; measures, single-scale designs, and pooled models may hide these patterns. Justice in the transition is less a property of a technology than a product of how we measure it, and solar and wind need different interventions to minimize and address burdens.</div>
+          <button class="toggle">Read abstract <span class="chev">&#9662;</span></button>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="idx">04</div>
         <div>
           <span class="tag">Data Centers &middot; Sociotechnical Imaginaries</span>
           <h3>Beyond Four Dimensions: Governance Agency, Regulatory Posture, and the Sociotechnical Imaginaries of Data Center Regulation in Australia and South Korea</h3>
@@ -406,8 +468,6 @@
         <div>
           <p class="label">Email</p>
           <p><a class="mail" href="mailto:dasom.lee@kaist.ac.kr">dasom.lee@kaist.ac.kr</a></p>
-          <p class="label" style="margin-top:34px;">Lab</p>
-          <p><a class="mail" href="https://aicpspolicy.kaist.ac.kr/" target="_blank" rel="noopener">AI-CPS Policy Lab, KAIST</a></p>
         </div>
         <div>
           <p class="label">Office</p>
@@ -421,7 +481,7 @@
 <footer>
   <div class="wrap foot-inner">
     <span>© 2026 Dasom Lee. All rights reserved.</span>
-    <span>Graduate School of Science and Technology Policy · <a href="https://aicpspolicy.kaist.ac.kr/" target="_blank" rel="noopener">KAIST</a></span>
+    <span>Graduate School of Science and Technology Policy · <a href="https://www.kaist.ac.kr/en/" target="_blank" rel="noopener">KAIST</a></span>
   </div>
 </footer>
 
