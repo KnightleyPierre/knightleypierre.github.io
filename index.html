@@ -10,14 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F2F4F6;
-    --paper-2:#E7EBEF;
-    --ink:#161A20;
-    --ink-soft:#525B66;
-    --pine:#1C3A5E;
-    --pine-deep:#122840;
-    --ember:#A8772F;
-    --line:#D6DBE1;
+    --paper:#EEF1EA;
+    --paper-2:#E3E8DC;
+    --ink:#1A231D;
+    --ink-soft:#566158;
+    --pine:#264A37;
+    --pine-deep:#1A3527;
+    --ember:#BD5F37;
+    --line:#D4DBCC;
     --display:'Source Serif 4',Georgia,serif;
     --body:'Newsreader',Georgia,serif;
     --ui:'Hanken Grotesk',-apple-system,sans-serif;
@@ -43,8 +43,12 @@
 
   .wrap{max-width:1080px;margin:0 auto;padding:0 40px}
   .eyebrow{
-    font-family:var(--ui);font-size:12.5px;font-weight:600;letter-spacing:.22em;
-    text-transform:uppercase;color:var(--ember);
+    font-family:var(--ui);font-size:13px;font-weight:600;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--ember);display:inline-flex;align-items:center;
+  }
+  .eyebrow::before{
+    content:"";display:inline-block;width:24px;height:2px;background:var(--ember);
+    margin-right:12px;
   }
 
   /* ---------- NAV ---------- */
@@ -70,8 +74,8 @@
   .hero{padding:96px 0 84px;position:relative;z-index:2}
   .hero-grid{display:grid;grid-template-columns:1.5fr .85fr;gap:64px;align-items:center}
   .hero h1{
-    font-family:var(--display);font-weight:500;font-size:clamp(48px,7vw,82px);
-    line-height:.98;letter-spacing:-.025em;margin:18px 0 0;
+    font-family:var(--display);font-weight:500;font-size:clamp(40px,5.2vw,60px);
+    line-height:1;letter-spacing:-.022em;margin:18px 0 0;
   }
   .hero h1 .name{color:var(--pine);font-style:normal}
   .role{
@@ -110,8 +114,8 @@
   .band{border-top:1px solid var(--line);padding:90px 0}
   .sec-head{margin-bottom:54px;max-width:60ch}
   .sec-head h2{
-    font-family:var(--display);font-weight:500;font-size:clamp(32px,4.4vw,46px);
-    letter-spacing:-.02em;line-height:1.05;margin-top:14px;
+    font-family:var(--display);font-weight:500;font-size:clamp(25px,3.2vw,36px);
+    letter-spacing:-.02em;line-height:1.08;margin-top:14px;
   }
 
   /* ---------- RESEARCH AREAS ---------- */
@@ -416,16 +420,6 @@
       </article>
 
       <article class="grant reveal">
-        <div class="grant-year">2024&ndash;2030</div>
-        <div class="grant-body">
-          <p class="role">Co-Investigator</p>
-          <h3>The Great Acceleration in the Anthropocene</h3>
-          <p class="meta">Global Collaborative Center Program &middot; National Research Foundation of Korea
-          <span class="pi">Principal Investigator: Professor Buhm Soon Park</span></p>
-        </div>
-      </article>
-
-      <article class="grant reveal">
         <div class="grant-year">2026</div>
         <div class="grant-body">
           <p class="role">Principal Investigator</p>
@@ -437,8 +431,19 @@
       <article class="grant reveal">
         <div class="grant-year">2024&ndash;2027</div>
         <div class="grant-body">
+          <p class="role">Principal Investigator</p>
           <h3>EWon Assistant Professorship (이원조교수)</h3>
           <p class="meta">Korea Advanced Institute of Science and Technology (KAIST)</p>
+        </div>
+      </article>
+
+      <article class="grant reveal">
+        <div class="grant-year">2024&ndash;2030</div>
+        <div class="grant-body">
+          <p class="role">Co-Investigator</p>
+          <h3>The Great Acceleration in the Anthropocene</h3>
+          <p class="meta">Global Collaborative Center Program &middot; National Research Foundation of Korea
+          <span class="pi">Principal Investigator: Professor Buhm Soon Park</span></p>
         </div>
       </article>
     </div>
